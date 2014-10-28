@@ -20,7 +20,7 @@ describe('css weekly', function () {
 
       it('article.body should return correct body.', function () {
         assert.deepEqual(article.body.substr(0, 14), 'A multi-device');
-        assert.deepEqual(article.body.substr(-9, 9), 'popular).');
+        assert.deepEqual(article.body.substr(-9), 'popular).');
       });
 
       it('article.image should return correct image url.', function () {
@@ -44,37 +44,37 @@ describe('css weekly', function () {
   describe('issue 100', function () {
     var article;
 
-    describe('tools article', function () {
+    describe('inspiration article', function () {
       before(function (done) {
         cssWeekly(100, function (issue) {
-          article = issue.articles[2];
+          article = issue.articles[12];
           done();
         });
       });
 
-      it('article.title should return "Making Embedded Content Work In Responsive Design".', function () {
-        assert.deepEqual(article.title, 'Making Embedded Content Work In Responsive Design');
+      it('article.title should return "CSS Pug".', function () {
+        assert.deepEqual(article.title, 'CSS Pug');
       });
 
       it('article.body should return correct body.', function () {
-        assert.deepEqual(article.body.substr(0, 6), 'Rachel');
-        assert.deepEqual(article.body.substr(-9), 'viewport.');
+        assert.deepEqual(article.body.substr(0, 5), 'A pug');
+        assert.deepEqual(article.body.substr(-8), 'CSS art.');
       });
 
       it('article.image should return correct image url.', function () {
-        assert.deepEqual(article.image, 'http://css-weekly.com/wp-content/uploads/2014/03/making-embedded-content-work-in-responsive-design.jpg');
+        assert.deepEqual(article.image, 'http://css-weekly.com/wp-content/uploads/2014/03/css-pug.jpg');
       });
 
-      it('article.source should return "Rachel McCollin".', function () {
-        assert.deepEqual(article.source, 'Rachel McCollin');
+      it('article.source should return null.', function () {
+        assert.deepEqual(article.source, null);
       });
 
       it('article.url should return correct url.', function () {
-        assert.deepEqual(article.url, 'http://mobile.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-responsive-design/');
+        assert.deepEqual(article.url, 'http://codepen.io/sforsberg/full/IdJuv');
       });
 
-      it('article.cat should return "Article & Tutorials".', function () {
-        assert.deepEqual(article.cat, 'Articles & Tutorials');
+      it('article.cat should return "Inspiration".', function () {
+        assert.deepEqual(article.cat, 'Inspiration');
       });
     });
   });

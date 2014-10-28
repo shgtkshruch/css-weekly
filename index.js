@@ -48,7 +48,7 @@ module.exports = function (issueNumber, callback) {
 
       article.cat = $(this).parent().children('h2').first().text() || 'Articles & Tutorials';
 
-      article.source = article.cat === 'Tools' ? null : $(this).find('.article-title + a').text();
+      article.source = article.cat === 'Tools' || article.cat === 'Inspiration' ? null : $(this).find('.article-title + a').text();
 
       articles.push(article);
     });
