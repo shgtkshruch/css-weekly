@@ -31,7 +31,7 @@ module.exports = function (issueNumber, callback) {
 
     $('.newsletter-article').each(function (i, elem) {
 
-      if ($(this).prev('.section-title').text().search(/Sponsor/) !== -1) {
+      if ($(this).prev('.section-title').text().search(/sponsor/i) !== -1) {
         return;
       }
 
@@ -46,7 +46,7 @@ module.exports = function (issueNumber, callback) {
       var img = $(this).find('img').parent().html();
       article.image = img ? img.split('src=')[1].split('"')[1] : null;
 
-      article.cat = $(this).parent().children('h2').first().text() || 'Article & Tutorials';
+      article.cat = $(this).parent().children('h2').first().text() || 'Articles & Tutorials';
 
       article.source = article.cat === 'Tools' ? null : $(this).find('.article-title + a').text();
 
