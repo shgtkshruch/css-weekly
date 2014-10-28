@@ -47,7 +47,7 @@ describe('css weekly', function () {
     describe('tools article', function () {
       before(function (done) {
         cssWeekly(100, function (issue) {
-          article = issue.articles[3];
+          article = issue.articles[2];
           done();
         });
       });

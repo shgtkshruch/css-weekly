@@ -50,7 +50,7 @@ module.exports = function (issueNumber, callback) {
 
       article.source = article.cat === 'Tools' ? null : $(this).find('.article-title + a').text();
 
-      articles[i] = article;
+      articles.push(article);
     });
     issue.articles = articles;
 
