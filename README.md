@@ -7,32 +7,59 @@ Get CSS WEEKLY issues.
 Get first issue.
 
 ```js
-var issue = require('css-weekly')(1);
-var article = issue.articles(1);
+var cssWeekly = require('css-weekly');
+var issue = cssWeekly(1, function (issue) {
+  var article = issue.articles(0);
 
-article.title
-//=> Off Canvas
+  issue.title
+  //=> Issue #1
 
-article.body
-//=> A multi-device web layout pattern explained from conceptual and technical point of view...
+  issue.date
+  //=> March 26th, 2012
 
-article.source
-//=> Jason Weaver
+  article.title
+  //=> Off Canvas
 
-article.url
-//=> http://jasonweaver.name/lab/offcanvas/
+  article.body
+  //=> A multi-device web layout pattern explained from conceptual...
+
+  article.image
+  //=> http://css-weekly.com/wp-content/uploads/2013/01/off-canvas.jpg
+
+  article.source
+  //=> Jason Weaver
+
+  article.url
+  //=> http://jasonweaver.name/lab/offcanvas/
+
+  article.cat
+  //=> Articles & Tutorials
+});
 ```
 
 ## API
 
-require('css-weekly')(issue number);
+### issue
+issue.title
 
-issue.articles(article number);
+issue.date
+
+issue.articles
+
+### article
+article = issue.articles(article index);
 
 article.title
+
 article.body
+
+article.image
+
 article.source
+
 article.url
+
+article.cat
 
 ## LICENSE
 MIT
